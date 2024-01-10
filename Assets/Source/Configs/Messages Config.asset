@@ -20,3 +20,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ed31d27123ecf9842a3ba8c334a27251, type: 2}
   - {fileID: 11400000, guid: c96a51533b02fab409b10bbca5de46a5, type: 2}
   <MessageView>k__BackingField: {fileID: 3415754379061571147, guid: bf0ddf30fd68f69448a1786f493f6793, type: 3}
+  <AnchorMaxForMessageHolderIfContactsIsVisible>k__BackingField: 0.5
+  <AnchorMaxForMessageHolderIfContactsIsHide>k__BackingField: 0.6

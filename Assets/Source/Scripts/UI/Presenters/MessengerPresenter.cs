@@ -12,7 +12,6 @@ public sealed class MessengerPresenter : IInitializable
     private MessengerView _messengerView;
     private MessagesConfig _messagesConfig;
 
-    private int _messagesPaddingOrigin;
     private bool _contactsIsHide;
     private bool _dateFilterSelected;
 
@@ -23,8 +22,6 @@ public sealed class MessengerPresenter : IInitializable
         _messengerSystem = messengerSystem;
         _messengerView = messengerView;
         _messagesConfig = messagesConfig;
-
-        _messagesPaddingOrigin = _messengerView.VerticalLayoutGroup.padding.top;
     }
 
     public void Initialize()
@@ -78,7 +75,7 @@ public sealed class MessengerPresenter : IInitializable
 
         if(!messageView)
         {
-            messageView = GameObject.Instantiate(_messagesConfig.MessageView, _messengerView.MessangeHolder);
+            messageView = GameObject.Instantiate(_messagesConfig.MessageView, _messengerView.MessageContetHolder);
             _messageViews.Add(messageView);
         }
         else
@@ -93,7 +90,8 @@ public sealed class MessengerPresenter : IInitializable
     {
         _contactsIsHide = !_contactsIsHide;
         _messengerView.ContactsView.gameObject.SetActive(!_contactsIsHide);
-        _messengerView.VerticalLayoutGroup.padding.top = _contactsIsHide ? 0 : _messagesPaddingOrigin;
+        _messengerView.MessangeHolder.anchorMax = new Vector2(_messengerView.MessangeHolder.anchorMax.x, _contactsIsHide ? _messagesConfig.AnchorMaxForMessageHolderIfContactsIsHide :
+            _messagesConfig.AnchorMaxForMessageHolderIfContactsIsVisible);
 
         LayoutRebuilder.MarkLayoutForRebuild(_messengerView.MessangeHolder);
     }
