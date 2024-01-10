@@ -5,4 +5,5 @@ using UnityEngine;
 public sealed class ContactsConfig : ScriptableObject
 {
     [field: SerializeField] public List<ContactConfig> ContactConfigs { get; private set; }
+    [field: SerializeField] public ContactView ContactView { get; private set; }
 }

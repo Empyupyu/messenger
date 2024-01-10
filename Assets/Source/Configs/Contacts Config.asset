@@ -19,3 +19,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c2ed7affdc3530d44b1cefdbd85ac0b8, type: 2}
   - {fileID: 11400000, guid: cf65af9084e16c04fa1120d2d9af0001, type: 2}
   - {fileID: 11400000, guid: cf867a6137647a94cb82251ddfe100cf, type: 2}
+  <ContactView>k__BackingField: {fileID: 598589019120706812, guid: 86da54bb5f2733b4cb9088c57bc65e2f, type: 3}

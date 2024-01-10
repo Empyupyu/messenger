@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class ConfigInstaller : MonoBehaviour
+using Zenject;
+public sealed class ConfigInstaller : MonoInstaller
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private ContactsConfig _contactsConfig;
+    [SerializeField] private MessagesConfig _messagesConfig;
 
-    // Update is called once per frame
-    void Update()
+    public override void InstallBindings()
     {
-        
+        Container.Bind<ContactsConfig>().FromInstance(_contactsConfig).AsSingle();
+        Container.Bind<MessagesConfig>().FromInstance(_messagesConfig).AsSingle();
     }
 }

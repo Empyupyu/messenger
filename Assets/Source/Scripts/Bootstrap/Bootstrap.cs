@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bootstrap : MonoBehaviour
+public sealed class Bootstrap : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private readonly List<GameSystem> _gameSystems = new();
+
+    private void Awake()
     {
-        
+        AddSystems();
+
+        foreach (var system in _gameSystems) system.OnAwake();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void AddSystems()
     {
-        
+        _gameSystems.AddRange(transform.GetComponentsInChildren<GameSystem>());
+    }
+
+    private void Update()
+    {
+        foreach (var system in _gameSystems) system.OnUpdate();
     }
 }
