@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Supyrb;
+using System;
 using System.Collections.Generic;
 using Zenject;
 
@@ -9,12 +10,13 @@ public class MessengerSystem : GameSystem
 
     [Inject] private MessagesConfig _messagesConfig;
 
-    private Dictionary<CharacterID, List<MessageConfig>> _allMessages = new Dictionary<CharacterID, List<MessageConfig>>();
     private List<MessageConfig> _visibleMessages = new List<MessageConfig>();
 
     public override void OnAwake()
     {
         InitializeAllMessages();
+
+        Signals.Get<SelectContactSignal>().AddListener(ShowMessagesByFilter);
     }
 
     private void InitializeAllMessages()
@@ -23,28 +25,21 @@ public class MessengerSystem : GameSystem
 
         foreach (var message in messages)
         {
-            if (!_allMessages.ContainsKey(message.ID))
+            if (!_game.AllMessages.ContainsKey(message.ID))
             {
-                _allMessages.Add(message.ID, new List<MessageConfig>());
+                _game.AllMessages.Add(message.ID, new List<MessageConfig>());
             }
 
-            _allMessages[message.ID].Add(message);
+            _game.AllMessages[message.ID].Add(message);
             _visibleMessages.Add(message);
         }
 
         UpdateMessagesByIDFilterEvent?.Invoke();
     }
 
-    public void ShowMessageByIDFilter(CharacterID id)
-{
-        if (!_allMessages.ContainsKey(id)) return;
-
-        _visibleMessages.Clear();
-
-        foreach (var message in _allMessages[id])
-        {
-            _visibleMessages.Add(message);
-        }
+    private void ShowMessagesByFilter(IMessageFilterStrategy filter, bool isSelected)
+    {
+        _visibleMessages = filter.GetMessagesByFilter(_visibleMessages, _messagesConfig, isSelected);
 
         UpdateMessagesByIDFilterEvent?.Invoke();
     }

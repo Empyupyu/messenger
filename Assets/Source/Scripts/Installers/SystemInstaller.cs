@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using Zenject;
-
 public sealed class SystemInstaller : MonoInstaller
 {
     [SerializeField] private ContactSystem _contactSystem;

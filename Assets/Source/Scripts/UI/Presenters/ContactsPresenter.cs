@@ -1,6 +1,6 @@
 using UnityEngine;
 using Zenject;
-public class ContactsPresenter : IInitializable
+public sealed class ContactsPresenter : IInitializable
 {
     private ContactSystem _contactSystem;
     private ContactsView _contactsView;

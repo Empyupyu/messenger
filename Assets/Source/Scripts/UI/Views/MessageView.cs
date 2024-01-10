@@ -7,7 +7,7 @@ public class MessageView : MonoBehaviour
     [field: SerializeField] public TextMeshProUGUI Title { get; private set; }
     [field: SerializeField] public TextMeshProUGUI Message { get; private set; }
     [field: SerializeField] public TextMeshProUGUI Date { get; private set; }
-
+    [field: SerializeField] public Button DateFilterButton { get; private set; }
     public CharacterID ContactID { get; private set; }
 
     public void Initialize(CharacterID id)

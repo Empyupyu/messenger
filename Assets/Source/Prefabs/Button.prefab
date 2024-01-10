@@ -130,6 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5932261748568946670}
+  - component: {fileID: 7092910742847029126}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -159,6 +160,22 @@ RectTransform:
   m_AnchoredPosition: {x: -291.64178, y: -70.19043}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7092910742847029126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845143979748275523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cbee91c030b4b4a900c1b1c4b16d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Button>k__BackingField: {fileID: 1185387001060142058}
+  <Icon>k__BackingField: {fileID: 4449147177962525456}
+  <SelectColor>k__BackingField: {r: 0, g: 0.8078432, b: 0.9686275, a: 1}
+  <DeSelectColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &8063829327173623514
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

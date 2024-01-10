@@ -1,4 +1,4 @@
-using System.Collections;
+using Supyrb;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,5 +21,10 @@ public sealed class Bootstrap : MonoBehaviour
     private void Update()
     {
         foreach (var system in _gameSystems) system.OnUpdate();
+    }
+
+    private void OnDestroy()
+    {
+        Signals.Clear();
     }
 }
