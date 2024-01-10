@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db8f10c0700a614685ca736c84a9e47, type: 3}
+  m_Name: Contacts Config
+  m_EditorClassIdentifier: 
+  <ContactConfigs>k__BackingField:
+  - {fileID: 11400000, guid: 9d3be11ec8a34bd40b375228b6b2fe94, type: 2}
+  - {fileID: 11400000, guid: 79f697445ac0f2c4aa8edbd6ff3b2fbc, type: 2}
+  - {fileID: 11400000, guid: 37c2e66ca5ebdae4a9239b4c720ebbd0, type: 2}
+  - {fileID: 11400000, guid: c2ed7affdc3530d44b1cefdbd85ac0b8, type: 2}
+  - {fileID: 11400000, guid: cf65af9084e16c04fa1120d2d9af0001, type: 2}
+  - {fileID: 11400000, guid: cf867a6137647a94cb82251ddfe100cf, type: 2}
